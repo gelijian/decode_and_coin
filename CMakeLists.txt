@@ -25,3 +25,5 @@ target_link_libraries(decode gsl gslcblas boost_system boost_filesystem)
 add_executable(coin coin.cc ${sources} ${headers})
 target_link_libraries(coin gsl gslcblas boost_system boost_filesystem)
 
+configure_file(${PROJECT_SOURCE_DIR}/parameters.json 
+	${PROJECT_BINARY_DIR}/parameters.json COPYONLY)

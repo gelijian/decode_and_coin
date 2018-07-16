@@ -44,7 +44,6 @@ class CoinManager
                        ofstream & output);
         void coinPairs(DGZtype dtype, int & timewindow, 
                               vector<ChPair> & pairs, string & outputdir);
-        vector<ChPair> genpairs(int s1list[], int sizes1, int s2list[], 
-                                int sizes2, int reflist[], int sizeref); 
+        vector<ChPair> genpairs(vector<int> s1list, vector<int> s2list, vector<int> reflist); 
 };
 #endif

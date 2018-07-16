@@ -125,21 +125,20 @@ void CoinManager::coinPairs(DGZtype dtype, int & timewindow, vector<ChPair> & pa
     }
 }
 
-vector<ChPair> CoinManager::genpairs(int s1list[], int sizes1, int s2list[], 
-                                    int sizes2, int reflist[], int sizeref)
+vector<ChPair> CoinManager::genpairs(vector<int> s1list, vector<int> s2list, vector<int> reflist)
 {
     vector<ChPair> pairs;
 //  generate (s1, s2) pair 
-    for (int i = 0; i < sizes1; i++)
+    for (int i = 0; i < s1list.size(); i++)
     {
-        for (int j = 0; j < sizes2; j++)
+        for (int j = 0; j < s2list.size(); j++)
         {
             ChPair p(s1list[i], s2list[j]);
             pairs.push_back(p);
         }
     }
 //  generate ref pair
-    for (int i = 1; i < sizeref; i++)
+    for (int i = 1; i < reflist.size(); i++)
     {
         ChPair p(reflist[0], reflist[i]);
         pairs.push_back(p);
